@@ -3,5 +3,5 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "terraform_state" {
-  bucket = "terraform-state-maxi-123456"
+  bucket = "terraform-states"
 }
