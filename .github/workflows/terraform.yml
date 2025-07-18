@@ -30,8 +30,9 @@ jobs:
 
       - name: Apply
         if: github.ref == 'refs/heads/master'
-        run: echo "🟢 Región configurada: ${{ secrets.AWS_REGION }}"
-        run: terraform apply -auto-approve -var "aws_region=${{ secrets.AWS_REGION }}"
+        run: |
+          echo "🟢 Región configurada: ${{ secrets.AWS_REGION }}"
+          terraform apply -auto-approve -var "aws_region=${{ secrets.AWS_REGION }}"
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
