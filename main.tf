@@ -10,3 +10,7 @@ resource "aws_instance" "mi_ec2" {
     Name = "MiInstanciaTerraform"
   }
 }
+
+module "backend" {
+  source = "./backend"
+}
