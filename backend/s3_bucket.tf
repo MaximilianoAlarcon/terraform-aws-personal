@@ -1,7 +1,5 @@
-provider "aws" {
-  region = "us-east-1"
-}
+data "aws_caller_identity" "current" {}
 
 resource "aws_s3_bucket" "terraform_state" {
-  bucket = "maxi666-terraform-states"
+  bucket = "data-${data.aws_caller_identity.current.account_id}-${var.env}"
 }
