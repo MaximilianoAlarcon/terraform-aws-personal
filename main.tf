@@ -15,4 +15,5 @@ resource "aws_instance" "mi_ec2" {
 
 module "backend" {
   source = "./backend"
+  env    = var.env
 }
